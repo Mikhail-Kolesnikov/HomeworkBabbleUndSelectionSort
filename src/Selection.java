@@ -14,7 +14,6 @@ public class Selection {
 
         for (int j = 0; j < massive.length; j++) {
 
-
             int min = massive[j];
             int index = j;
 

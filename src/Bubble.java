@@ -28,7 +28,7 @@ public class Bubble {
 //        while (!sort) {
 //            sort = true;
         int coint = 0;
-       long before = System.currentTimeMillis();
+       long before = System.nanoTime();
 
         for (int i = 0; i < massive.length - 1; i++) {
 
@@ -38,7 +38,7 @@ public class Bubble {
 
                 int buffer;
                 if (massive[j] > massive[j + 1]) {
-//                        sort = false;
+
                     buffer = massive[j];
                     massive[j] = massive[j + 1];
                     massive[j + 1] = buffer;
@@ -50,11 +50,11 @@ public class Bubble {
                 break;
             }
         }
-        long after = System.currentTimeMillis();
+        long after = System.nanoTime();
 
         System.out.println("Отсортированный массив" + Arrays.toString(massive));
         System.out.println("Количество операций " + coint);
-        System.out.println("Время: " + (after-before));
+        System.out.println("Время: " + (after-before) + " Мс");
 
 
 
