@@ -27,7 +27,12 @@ public class Bubble {
 //        boolean sort = false;
 //        while (!sort) {
 //            sort = true;
+        int coint = 0;
+       long before = System.currentTimeMillis();
+
         for (int i = 0; i < massive.length - 1; i++) {
+
+            coint++;
             boolean sort = false;
             for (int j = 0; j < massive.length - 1; j++) {
 
@@ -40,16 +45,21 @@ public class Bubble {
                     sort = true;
                 }
             }
+
             if (!sort) {
                 break;
             }
         }
+        long after = System.currentTimeMillis();
+
         System.out.println("Отсортированный массив" + Arrays.toString(massive));
+        System.out.println("Количество операций " + coint);
+        System.out.println("Время: " + (after-before));
+
+
+
     }
-
-
 }
-
 
 
 

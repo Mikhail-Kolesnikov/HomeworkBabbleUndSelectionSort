@@ -9,6 +9,8 @@ public class Selection {
 
         int[] massive = new int[100];
         Random random = new Random();
+        int count =0;
+        long before = System.nanoTime();
 
         for (int j = 0; j < massive.length; j++) {
 
@@ -17,10 +19,11 @@ public class Selection {
             int index = j;
 
             for (int i = j; i < massive.length; i++) {
-                massive[j] = random.nextInt(100);
+                massive[i] = random.nextInt(100);
+                count++;
 
                 if (massive[i] < min) {
-                    min = massive[i];
+                    min = massive[j];
                     index = i;
                 }
 
@@ -29,9 +32,12 @@ public class Selection {
             massive[j] = massive[index];
             massive[index] = temp;
         }
+        long after = System.nanoTime();
 
 
         System.out.println(Arrays.toString(massive));
+        System.out.println(count);
+        System.out.println(after-before);
 
 
     }
