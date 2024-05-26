@@ -5,20 +5,40 @@ import java.util.Random;
 public class Selection {
 
     public static void main(String[] args) {
-        int[]massive= new int[100];
-        Random random= new Random();
-        for (int i = 0; i < massive.length; i++) {
-            massive[i]= random.nextInt(100);
+
+
+        int[] massive = new int[100];
+        Random random = new Random();
+
+        for (int j = 0; j < massive.length; j++) {
+
+
+            int min = massive[j];
+            int index = j;
+
+            for (int i = j; i < massive.length; i++) {
+                massive[j] = random.nextInt(100);
+
+                if (massive[i] < min) {
+                    min = massive[i];
+                    index = i;
+                }
+
+            }
+            int temp = massive[j];
+            massive[j] = massive[index];
+            massive[index] = temp;
         }
-        System.out.println("Исходный элемент"+ Arrays.toString(massive));
 
 
+        System.out.println(Arrays.toString(massive));
 
-
-        System.out.println("Отсортированный массив"+ Arrays.toString(massive));
 
     }
+
+
 }
+
 
 //for (int i = 0; i < numb.length; i++) {
 //
